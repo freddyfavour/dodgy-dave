@@ -82,7 +82,7 @@ async function fetchReport(data) {
     try {
         const openai = new OpenAI({
             dangerouslyAllowBrowser: true,
-            apiKey: OPENAI_API_KEY,
+            apiKey: process.env.OPENAI_API_KEY,
         })
         const response = await openai.chat.completions.create({
             model: 'gpt-4o-mini',
