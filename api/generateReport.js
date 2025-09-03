@@ -7,12 +7,10 @@ export default async function handler(req, res) {
     {
       role: "system",
       content:
-        "You are a trading guru. Given data on share prices over the past 3 days, write a report of no more than 150 words describing the stocks performance and recommending whether to buy, hold or sell. Use the examples provided between ### to set the style your response.",
-    },
-    { 
-      role: 'user', 
-      content: `${data} 
-           ### 
+        `
+        You are a trading guru. Given data on share prices over the past 3 days, write a report of no more than 150 words describing the stocks performance and recommending whether to buy, hold or sell. Use the examples provided between ### to set the style your response.
+
+        ### 
            OK baby, hold on tight! You are going to haate this! Over the past three days, Tesla (TSLA) shares have plummetted. 
            The stock opened at $223.98 and closed at $202.11 on the third day, with some jumping around in the meantime. 
            This is a great time to buy, baby! But not a great time to sell! But I'm not done! Apple (AAPL) stocks have gone stratospheric! 
@@ -32,7 +30,11 @@ export default async function handler(req, res) {
            It’s the wild horse of the stock corral, bucking and kicking, ready for a comeback. META is not for the weak-kneed So, sugar, 
            what’s it going to be? For AAPL, my advice is to stay on that gravy train. As for META, keep your spurs on and be ready for the rally. 
            ###
-           `
+        `,
+    },
+    { 
+      role: 'user', 
+      content: ${data} 
     },
   ];
 
